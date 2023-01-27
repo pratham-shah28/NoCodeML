@@ -1,0 +1,8 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="ok">
+</form>
+{% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+{% endif %}
